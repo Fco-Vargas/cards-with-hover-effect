@@ -1,0 +1,219 @@
+*, *:before, *:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-bg-card-layer: rgba(169, 169, 169, .8);
+}
+
+.root {
+    font-size: 16px;
+    font-family: sans-serif;
+    padding: 0 15px;
+}
+
+.our-team__title {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 2rem;
+}
+
+.cards-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 10px 10px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+@media screen and (min-width: 576px) {
+    .cards-container {
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media (min-width: 768px) {
+    .cards-container {
+        grid-template-columns: repeat(3, auto);
+    }
+}
+
+@media (min-width: 992px) {
+    .cards-container {
+        grid-template-columns: repeat(4, auto);
+    }
+
+    .our-team__title {
+        font-size: 2.5rem;
+    }
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+.card, .card__bg-img, .card__layer {
+    border-radius: 5px;
+}
+
+.card__layer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    background-color: var(--color-bg-card-layer);
+
+    animation-duration: .3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.card__title, .card__description {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.card__title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.card__description {
+    font-size: 1.2rem;
+}
+
+.card__bg-img {
+    display: block;
+    width: 100%;
+}
+
+.card__layer.enter-top {
+    animation-name: enterTop;
+}
+
+.card:hover .card__layer.enter-bottom {
+    animation-name: enterBottom;
+}
+
+.card__layer.enter-left {
+    animation-name: enterLeft;
+}
+
+.card__layer.enter-right {
+    animation-name: enterRight;
+}
+
+.card__layer.leave-top {
+    animation-name: leaveTop;
+}
+
+.card__layer.leave-bottom {
+    animation-name: leaveBottom;
+}
+
+.card__layer.leave-left {
+    animation-name: leaveLeft;
+}
+
+.card__layer.leave-right {
+    animation-name: leaveRight;
+}
+
+@keyframes enterTop {
+    from {
+        top: -100%;
+        left: 0;
+    }
+    to {
+        top: 0;
+        left: 0;
+    }
+}
+
+@keyframes enterBottom {
+    from {
+        top: 100%;
+        left: 0;
+    }
+    to {
+        top: 0;
+        left: 0;
+    }
+}
+
+@keyframes enterLeft {
+    from {
+        top: 0;
+        left: -100%;
+    }
+    to {
+        top: 0;
+        left: 0;
+    }
+}
+
+@keyframes enterRight {
+    from {
+        top: 0;
+        left: 100%;
+    }
+    to {
+        top: 0;
+        left: 0;
+    }
+}
+
+@keyframes leaveTop {
+    from {
+        top: 0;
+        left: 0;
+    }
+    to {
+        top: -100%;
+        left: 0;
+    }
+}
+
+@keyframes leaveBottom {
+    from {
+        top: 0;
+        left: 0;
+    }
+    to {
+        top: 100%;
+        left: 0;
+    }
+}
+
+@keyframes leaveLeft {
+    from {
+        top: 0;
+        left: 0;
+    }
+    to {
+        top: 0;
+        left: -100%;
+    }
+}
+
+@keyframes leaveRight {
+    from {
+        top: 0;
+        left: 0;
+    }
+    to {
+        top: 0;
+        left: 100%;
+    }
+}

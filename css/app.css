@@ -102,7 +102,7 @@
     animation-name: enterTop;
 }
 
-.card:hover .card__layer.enter-bottom {
+.card__layer.enter-bottom {
     animation-name: enterBottom;
 }
 
